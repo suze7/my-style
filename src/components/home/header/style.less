@@ -1,0 +1,16 @@
+@import '../../../assets/style/variable.less';
+.comp-header {
+  display: flex;
+  background: @headerColor;
+}
+.my-logo {
+  padding: 10px 0;
+  width: @leftWidth;
+  line-height: @headerHeight - 20px;
+  text-align: center;
+  color: @headerTextColor;
+  > img {
+    vertical-align: middle;
+    height: @headerHeight - 20px;
+  }
+}

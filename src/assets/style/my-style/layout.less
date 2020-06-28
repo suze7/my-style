@@ -1,0 +1,41 @@
+// @headerHeight: 80px;
+// @leftWidth: 200px;
+// @mainMargin: 20px;
+// 主页头部、左侧菜单、中间内容的布局
+.pub-layout-home {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: @leftWidth auto;
+  grid-template-rows: @headerHeight auto;
+  grid-template-areas:
+    'header header'
+    'menu main';
+}
+.pub-layout-header {
+  overflow: auto;
+  grid-area: header;
+}
+
+.pub-layout-main {
+  overflow: auto;
+  margin: @mainMargin;
+  background: @mainBackground;
+}
+// flex布局
+// 高度填满
+.pub-flex-fwidth {
+  width: fit-content;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.pub-flex-awidth {
+  overflow: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.pub-fill-form {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

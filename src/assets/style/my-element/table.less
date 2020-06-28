@@ -1,0 +1,54 @@
+@tableHeaderBK: #04aa7b; // 头部背景颜色
+@tableHeaderColor: #fff; // 头部文字颜色
+@tableSingleBK: #f88; // 奇数行颜色
+@tableDoubleBK: #08f; // 偶数行颜色
+@tableHoverBK: #f00; // hover颜色
+@tableTextColor: #fff; // 文字颜色
+// 表头的样式
+@headerBodyBottom: 0;
+.headerStyle() {
+  background: @tableHeaderBK;
+  color: @tableHeaderColor;
+  font-weight: normal;
+  border-left: 1px solid #000;
+  border-bottom: @headerBodyBottom;
+  &.is-leaf {
+    border-bottom: @headerBodyBottom;
+  }
+  .cell {
+    white-space: nowrap;
+  }
+}
+
+// 表格单元格样式
+.borderStyle {
+  color: @tableTextColor;
+  &:nth-child(odd) {
+    background: @tableSingleBK;
+  }
+  &:nth-child(even) {
+    background: @tableDoubleBK;
+  }
+  &:hover {
+    &.el-table__row {
+      > td {
+        background: @tableHoverBK;
+      }
+    }
+  }
+  .cell {
+    white-space: nowrap;
+  }
+}
+
+.pube-table {
+  th {
+    .headerStyle();
+  }
+  tr {
+    .borderStyle();
+  }
+  td {
+    border: 0;
+  }
+}
